@@ -8,4 +8,6 @@ class SecretColors:
 
     @property
     def get_secret_colors(self):
-        return self.secret_colors
+        # return  self.secret_colors
+        print( self.secret_colors)
+
