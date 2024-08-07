@@ -19,8 +19,12 @@ class UserColors:
             # print(f"{Fore.BLUE}blue + ENTER{Style.RESET_ALL}")
             # print(f"{Fore.YELLOW}yellow + ENTER{Style.RESET_ALL}")
             print()
-            print(f"{Fore.WHITE}COMIENZA A JUGAR!{Style.RESET_ALL}")
+            print(
+                f"{Fore.WHITE}fight!{Style.RESET_ALL}"
+            )
+            
             print()
+            
             color = input().strip().lower()
             user_colors.append(color)
         return user_colors
