@@ -12,6 +12,4 @@ class PrintColors:
                 array_with_color.append(Fore.GREEN + "green")
             elif color == "yellow":
                 array_with_color.append(Fore.YELLOW + "yellow")
-        return print( array_with_color)  
-    
-# print(PrintColors())
+        return array_with_color

@@ -1,4 +1,4 @@
-from colorama import Fore, Back, Style, init
+from colorama import Back, Fore, Style, init
 
 from print_colors import PrintColors
 from secret_colors import SecretColors
@@ -21,29 +21,57 @@ class MasterMind:
         win = False
         counter = 0
 
-        
-        txt ="""
-                      _          _ _               ____  _ _   _     
-                     | | ___  __| (_) __   _____  / ___|(_) |_| |__  
-                  _  | |/ _ \/ _` | | \ \ / / __| \___ \| | __| '_ \ 
-                 | |_| |  __/ (_| | |  \ V /\__ \  ___) | | |_| | | |
-                  \___/ \___|\__,_|_|   \_/ |___/ |____/|_|\__|_| |_|
-                                                                                                       """
-###################################################################################################################
-# Definir el color de texto y el color de fondo
-        text_color = Fore.WHITE
-        bg_color = Back.GREEN
-
-# Imprimir el texto con color de fondo
-        print(f"{text_color}{bg_color}{txt}{Style.RESET_ALL}")
-        
-        
-        
-        
-        
-        
         print(f"{Fore.WHITE} Secret colors: {self.secret_colors}")
         print()
+
+        txt = """   
+                                             ,,,
+                                           ██████
+         ╒▄                                ███████
+           ▀▄,                             ████████▄
+             ▀█▄                           ████████▄▄▄▄,
+                ▀▄,                         ,████████████▄
+                  ▀█▄                    ,▄███████████████
+                     ▀█,               ,███████████████████
+                       ▀█▄           ,█████▀███████████████▌
+                          ▀█,       ▄███      `▀██▀▀▀▄██████
+                            ▀█▄   ▄████            ,████████▌
+                               ▐████▀▀           ▄▄██████████
+                             ▄████▄▄▄,,          ▀▀▀▀████████▌
+                         ▄▄█████████████              ▀█▀ ████
+                    ▄▄█████████████████'                  " ▐█▌
+               ,▄█████████████████████▌                   j████
+            ▄▄██████████████████████▀▀                    j█████
+         ▄▄██████████████████████        ▄███████          █████▌
+      ▄████████████████████████▀'       ▐████  ███▄  ╓     ██████▄
+    ▄██████████████████████████        ,███▀▀  ▀███▄▄▐█▄  ,███████▄
+        ████████████████████████▌ █▄, ▐███▀▄   ╓ ████.█████████████▄
+       █████████████████████████▌ ███▌▐█████   █ ████ ██████████████▌
+          `▀▀███████████████████▌ ▐██ ▐████▌   ██████ ████████████████
+             ╒███████████████████ ▐██ ▐█████   █████▌ ▐████████████████
+               ▀█████████████████ ▐█▌ ██████   █████▌  █████████████████⌐
+                 ▀███████████████▌ █  ██████▌  ██████  ▐█████████████████⌐
+                   ▀██████████████ █ █████▌   ,██████▌  ██████████████████
+                         ███▀▀▀▀▀▀` ▀█████▌  ▄████▀▀▀▀  ▀▀▀████████████████
+                                                                          █ █▀▀ █▀▄ █ █▀   █░█ █▀   █▀ █ ▀█▀ █░█
+                                                                        █▄█ ██▄ █▄▀ █ ▄█   ▀▄▀ ▄█   ▄█ █ ░█░ █▀█     
+         
+                                                                                    
+                                                                                                             """
+
+        # Definir el color de texto y el color de fondo
+        text_color = Fore.BLACK
+        bg_color = Back.WHITE
+
+        # Imprimir el texto con color de fondo
+        print(f"{text_color}{bg_color}{txt}{Style.RESET_ALL}")
+
+        print(f"{Fore.WHITE}acontinuacion un ejemplo de una jugada{Style.RESET_ALL}")
+        print(f"{Fore.WHITE}Ejemplo: {Style.RESET_ALL}")
+        print(f"{Fore.RED}red + ENTER{Style.RESET_ALL}")
+        print(f"{Fore.GREEN}green + ENTER{Style.RESET_ALL}")
+        print(f"{Fore.BLUE}blue + ENTER{Style.RESET_ALL}")
+        print(f"{Fore.YELLOW}yellow + ENTER{Style.RESET_ALL}")
         while not win:
             user_colors = self.user_colors.get_colors()
             feedback = ["X"] * self.length
