@@ -11,7 +11,6 @@ class MasterMind:
     def __init__(self, colors, length):
         self.colors = colors
         self.length = length
-
         self.print_colors = PrintColors()
         self.secret_colors = SecretColors(self.colors, self.length).get_secret_colors
         self.user_colors = UserColors(self.length)
@@ -20,12 +19,8 @@ class MasterMind:
         feedback = ["X"] * self.length
         win = False
         counter = 0
-
         print(f"{Fore.WHITE} Secret colors: {self.secret_colors}")
-        print()
-
-        txt = """   
-                                             ,,,
+        txt = """                         
                                            ██████
          ╒▄                                ███████
            ▀▄,                             ████████▄
@@ -58,19 +53,82 @@ class MasterMind:
          
                                                                                     
                                                                                                              """
+        
+        ascii_winner= """ 
+         
+         
+ ██████   █████  ███    ███ ███████      ██████  ██    ██ ███████ ██████  
+██       ██   ██ ████  ████ ██          ██    ██ ██    ██ ██      ██   ██ 
+██   ███ ███████ ██ ████ ██ █████       ██    ██ ██    ██ █████   ██████  
+██    ██ ██   ██ ██  ██  ██ ██          ██    ██  ██  ██  ██      ██   ██ 
+ ██████  ██   ██ ██      ██ ███████      ██████    ████   ███████ ██   ██ 
+                                                                          
+                                                                          
 
+        
+        """
+        
+        Ascii_loser="""
+        
+                                                                                                                                                                                                                                      
+         
+████████ ██   ██ ███████ 
+   ██    ██   ██ ██      
+   ██    ███████ █████   
+   ██    ██   ██ ██      
+   ██    ██   ██ ███████ 
+                         
+
+██████  ███████ ███████ ██ ███████ ████████ ███████ ███    ██  ██████ ███████ 
+██   ██ ██      ██      ██ ██         ██    ██      ████   ██ ██      ██      
+██████  █████   ███████ ██ ███████    ██    █████   ██ ██  ██ ██      █████   
+██   ██ ██           ██ ██      ██    ██    ██      ██  ██ ██ ██      ██      
+██   ██ ███████ ███████ ██ ███████    ██    ███████ ██   ████  ██████ ███████ 
+                                                                              
+                                                                              
+
+███    ██ ███████ ██    ██ ███████ ██████      ███████ ██    ██ ██████  ██████  ███████ ███    ██ ██████  ███████ ██████  ███████ 
+████   ██ ██      ██    ██ ██      ██   ██     ██      ██    ██ ██   ██ ██   ██ ██      ████   ██ ██   ██ ██      ██   ██ ██      
+██ ██  ██ █████   ██    ██ █████   ██████      ███████ ██    ██ ██████  ██████  █████   ██ ██  ██ ██   ██ █████   ██████  ███████ 
+██  ██ ██ ██       ██  ██  ██      ██   ██          ██ ██    ██ ██   ██ ██   ██ ██      ██  ██ ██ ██   ██ ██      ██   ██      ██ 
+██   ████ ███████   ████   ███████ ██   ██     ███████  ██████  ██   ██ ██   ██ ███████ ██   ████ ██████  ███████ ██   ██ ███████ ██ ██ ██ 
+                                                                                                                                  
+                                                                                                                                  
+                        
+
+        
+        """
+        
+#         ascii_winner= """
+        
+        
+        
+#   ▄████  ▄▄▄       ███▄ ▄███▓▓█████     ▒█████   ██▒   █▓▓█████  ██▀███  
+#  ██▒ ▀█▒▒████▄    ▓██▒▀█▀ ██▒▓█   ▀    ▒██▒  ██▒▓██░   █▒▓█   ▀ ▓██ ▒ ██▒
+# ▒██░▄▄▄░▒██  ▀█▄  ▓██    ▓██░▒███      ▒██░  ██▒ ▓██  █▒░▒███   ▓██ ░▄█ ▒
+# ░▓█  ██▓░██▄▄▄▄██ ▒██    ▒██ ▒▓█  ▄    ▒██   ██░  ▒██ █░░▒▓█  ▄ ▒██▀▀█▄  
+# ░▒▓███▀▒ ▓█   ▓██▒▒██▒   ░██▒░▒████▒   ░ ████▓▒░   ▒▀█░  ░▒████▒░██▓ ▒██▒
+#  ░▒   ▒  ▒▒   ▓▒█░░ ▒░   ░  ░░░ ▒░ ░   ░ ▒░▒░▒░    ░ ▐░  ░░ ▒░ ░░ ▒▓ ░▒▓░
+#   ░   ░   ▒   ▒▒ ░░  ░      ░ ░ ░  ░     ░ ▒ ▒░    ░ ░░   ░ ░  ░  ░▒ ░ ▒░
+# ░ ░   ░   ░   ▒   ░      ░      ░      ░ ░ ░ ▒       ░░     ░     ░░   ░ 
+#       ░       ░  ░       ░      ░  ░       ░ ░        ░     ░  ░   ░     
+#                                                      ░                   
+
+        
+        
+        
+#         """
         # Definir el color de texto y el color de fondo
         text_color = Fore.BLACK
         bg_color = Back.WHITE
 
         # Imprimir el texto con color de fondo
         print(f"{text_color}{bg_color}{txt}{Style.RESET_ALL}")
-
-        print(f"{Fore.WHITE}acontinuacion un ejemplo de una jugada{Style.RESET_ALL}")
+        print(f"{Fore.WHITE}acontinuacion un ejemplo de una ronda{Style.RESET_ALL}")
         print(f"{Fore.WHITE}Ejemplo: {Style.RESET_ALL}")
         print(f"{Fore.RED}red + ENTER{Style.RESET_ALL}")
-        print(f"{Fore.GREEN}green + ENTER{Style.RESET_ALL}")
         print(f"{Fore.BLUE}blue + ENTER{Style.RESET_ALL}")
+        print(f"{Fore.GREEN}green + ENTER{Style.RESET_ALL}")
         print(f"{Fore.YELLOW}yellow + ENTER{Style.RESET_ALL}")
         while not win:
             user_colors = self.user_colors.get_colors()
@@ -90,9 +148,11 @@ class MasterMind:
 
             if all(fb == "⭐" for fb in feedback):
                 win = True
-                print(f"{Fore.GREEN}¡Acabas de ganar, bye!{Style.RESET_ALL}")
+                print(f"{Fore.GREEN}{Ascii_loser}{Style.RESET_ALL}")
             if counter + 1 >= self.length:
-                print(f"{Fore.RED}Ya no quedan más intentos, perdiste{Style.RESET_ALL}")
+                # print(f"{Fore.RED}Ya no quedan más intentos, perdiste{Style.RESET_ALL}")
+                print(f"{Fore.RED}{ascii_winner}{Style.RESET_ALL}")
+                ascii_winner
                 break
 
             counter += 1
