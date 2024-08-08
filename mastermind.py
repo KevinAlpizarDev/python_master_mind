@@ -132,7 +132,6 @@ class MasterMind:
                 win = True
                 print(f"{Fore.BLUE}{Ascii_loser}{Style.RESET_ALL}")
             if counter + 1 >= self.length:
-                # print(f"{Fore.RED}Ya no quedan más intentos, perdiste{Style.RESET_ALL}")
                 print(f"{Fore.RED}{ascii_winner}{Style.RESET_ALL}")
                 ascii_winner
                 break
