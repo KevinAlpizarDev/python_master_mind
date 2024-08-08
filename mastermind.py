@@ -126,7 +126,7 @@ class MasterMind:
             data = [[array_with_color, feedback]]
 
             for index, fila in enumerate(data):
-                print(f"Ronda: °{index + 1}  |{' '.join(fila[0])}|  {fila[1]}")
+                print(f"Timeout|{' '.join(fila[0])}|  {fila[1]}")
 
             if all(fb == "⭐" for fb in feedback):
                 win = True
