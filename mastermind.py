@@ -126,13 +126,12 @@ class MasterMind:
             data = [[array_with_color, feedback]]
 
             for index, fila in enumerate(data):
-                print(f"Ronda: °{index + 1}  |{' '.join(fila[0])}|  {fila[1]}")
+                print(f"Timeout|{' '.join(fila[0])}|  {fila[1]}")
 
             if all(fb == "⭐" for fb in feedback):
                 win = True
                 print(f"{Fore.BLUE}{Ascii_loser}{Style.RESET_ALL}")
             if counter + 1 >= self.length:
-                # print(f"{Fore.RED}Ya no quedan más intentos, perdiste{Style.RESET_ALL}")
                 print(f"{Fore.RED}{ascii_winner}{Style.RESET_ALL}")
                 ascii_winner
                 break
